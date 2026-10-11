@@ -1,0 +1,295 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Hind Siliguri', 'Noto Sans Bengali', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-available: var(--available);
+    --color-available-soft: var(--available-soft);
+    --color-inspection: var(--inspection);
+    --color-inspection-soft: var(--inspection-soft);
+    --color-inspection-ink: var(--inspection-ink);
+    --color-damaged: var(--damaged);
+    --color-damaged-soft: var(--damaged-soft);
+    --color-supplier: var(--supplier);
+    --color-supplier-soft: var(--supplier-soft);
+    --color-stock-in: var(--stock-in);
+    --color-stock-out: var(--stock-out);
+
+    --color-brand-from: var(--brand-from);
+    --color-brand-to: var(--brand-to);
+    --color-sky: var(--sky);
+    --color-sky-soft: var(--sky-soft);
+    --color-rose: var(--rose);
+    --color-rose-soft: var(--rose-soft);
+    --shadow-card: var(--shadow-card);
+    --shadow-lift: var(--shadow-lift);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: #f4f6fb;
+    --foreground: #141a2e;
+    --card: #ffffff;
+    --card-foreground: #141a2e;
+    --popover: #ffffff;
+    --popover-foreground: #141a2e;
+    --primary: #4338ca;
+    --primary-foreground: #ffffff;
+    --secondary: #eef0fa;
+    --secondary-foreground: #1e1b4b;
+    --muted: #f0f2f8;
+    --muted-foreground: #5b6478;
+    --accent: #eef0ff;
+    --accent-foreground: #3730a3;
+    --destructive: #c2412d;
+    --destructive-foreground: #c2412d;
+    --border: #e3e7f1;
+    --input: #d5dbea;
+    --ring: #6366f1;
+    --chart-1: #4338ca;
+    --chart-2: #0f8a6c;
+    --chart-3: #c98a0b;
+    --chart-4: #c2412d;
+    --chart-5: #7a4fc4;
+    --radius: 0.875rem;
+    --sidebar: #1e1b4b;
+    --sidebar-foreground: #c7caf0;
+    --sidebar-primary: #818cf8;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: rgba(255,255,255,0.09);
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: rgba(255,255,255,0.08);
+    --sidebar-ring: #818cf8;
+
+    --available: #0f8a6c;
+    --available-soft: #dcf1ea;
+    --inspection: #c98a0b;
+    --inspection-soft: #f8ecd0;
+    --damaged: #c2412d;
+    --damaged-soft: #f7e0db;
+    --supplier: #7a4fc4;
+    --supplier-soft: #ece4f8;
+    --inspection-ink: #8a5d00;
+    --stock-in: #0f8a6c;
+    --stock-out: #4338ca;
+
+    --brand-from: #4338ca;
+    --brand-to: #7c3aed;
+    --sky: #0284c7;
+    --sky-soft: #e0f2fe;
+    --rose: #e11d48;
+    --rose-soft: #ffe4e6;
+    --shadow-card: 0 1px 2px rgb(16 24 40 / 0.04), 0 8px 24px -12px rgb(67 56 202 / 0.18);
+    --shadow-lift: 0 2px 4px rgb(16 24 40 / 0.05), 0 18px 36px -14px rgb(67 56 202 / 0.32);
+}
+
+.dark {
+    --background: #0b1020;
+    --foreground: #e8ebf7;
+    --card: #121a2e;
+    --card-foreground: #e8ebf7;
+    --popover: #151e35;
+    --popover-foreground: #e8ebf7;
+    --primary: #8b93f8;
+    --primary-foreground: #0b1020;
+    --secondary: #1b2440;
+    --secondary-foreground: #e8ebf7;
+    --muted: #18213a;
+    --muted-foreground: #98a1bb;
+    --accent: #1f2a4d;
+    --accent-foreground: #dfe3ff;
+    --destructive: #ef7a66;
+    --destructive-foreground: #ef7a66;
+    --border: #232d4b;
+    --input: #2a3557;
+    --ring: #8b93f8;
+    --chart-1: #7b8cea;
+    --chart-2: #27a882;
+    --chart-3: #c08a12;
+    --chart-4: #e0566b;
+    --chart-5: #9a78e2;
+    --sidebar: #0d1230;
+    --sidebar-foreground: #b9bde6;
+    --sidebar-primary: #8b93f8;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: rgba(255,255,255,0.07);
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: rgba(255,255,255,0.06);
+    --sidebar-ring: #8b93f8;
+
+    --available: #27a882;
+    --available-soft: #12352d;
+    --inspection: #c08a12;
+    --inspection-soft: #3a2e12;
+    --damaged: #e0566b;
+    --damaged-soft: #41221d;
+    --supplier: #9a78e2;
+    --supplier-soft: #2d2346;
+    --inspection-ink: #e2b04a;
+    --stock-in: #27a882;
+    --stock-out: #7b8cea;
+
+    --brand-from: #6366f1;
+    --brand-to: #a855f7;
+    --sky: #38bdf8;
+    --sky-soft: #0c2a40;
+    --rose: #fb7185;
+    --rose-soft: #3b1621;
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.55);
+    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.35), 0 18px 36px -14px rgb(99 102 241 / 0.35);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@utility hatch {
+    background-image: repeating-linear-gradient(
+        135deg,
+        color-mix(in oklab, currentColor 38%, transparent) 0 2px,
+        transparent 2px 6px
+    );
+}
+
+@utility bg-brand {
+    background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+}
+
+@utility text-brand {
+    background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+    background-clip: text;
+    color: transparent;
+}
+
+@utility surface {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-card);
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes grow-x {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes shimmer {
+    from {
+        background-position: -200% 0;
+    }
+    to {
+        background-position: 200% 0;
+    }
+}
+
+@utility animate-rise {
+    animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-grow-x {
+    transform-origin: left;
+    animation: grow-x 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility stagger {
+    & > * {
+        animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    & > *:nth-child(2) { animation-delay: 60ms; }
+    & > *:nth-child(3) { animation-delay: 120ms; }
+    & > *:nth-child(4) { animation-delay: 180ms; }
+    & > *:nth-child(5) { animation-delay: 240ms; }
+    & > *:nth-child(6) { animation-delay: 300ms; }
+    & > *:nth-child(n + 7) { animation-delay: 340ms; }
+}
